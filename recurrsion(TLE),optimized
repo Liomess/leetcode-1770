@@ -4,7 +4,7 @@ class Solution:
             if idx_m==len(mul):
                 return 0
             left=(nums[idx_n]*mul[idx_m])+solve(self,nums,multipliers,idx_m+1,idx_n+1)
-            r=(nums[len(nums)-1-(idx_m-idx_n)]*mul[idx_m])+solve(self,nums,multipliers,idx_m+1,idx_n,)
+            r=(nums[len(nums)-1-(idx_m-idx_n)]*mul[idx_m])+solve(self,nums,multipliers,idx_m+1,idx_n)
             return max(left,r)
         n=len(nums)
         m=len(multipliers)
