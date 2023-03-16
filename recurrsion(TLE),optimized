@@ -1,0 +1,11 @@
+class Solution:
+    def maximumScore(self, nums: List[int], multipliers: List[int]) -> int:
+        def solve(self,nums,mul,idx_m,idx_n):
+            if idx_m==len(mul):
+                return 0
+            left=(nums[idx_n]*mul[idx_m])+solve(self,nums,multipliers,idx_m+1,idx_n+1)
+            r=(nums[len(nums)-1-(idx_m-idx_n)]*mul[idx_m])+solve(self,nums,multipliers,idx_m+1,idx_n,)
+            return max(left,r)
+        n=len(nums)
+        m=len(multipliers)
+        return solve(self,nums,multipliers,0,0)
